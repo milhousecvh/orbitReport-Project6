@@ -1,6 +1,7 @@
 import satData from "./satData";
 
-const Table = ({ sat }) => {
+const Table = ({sat}) => {
+
   return (
       <table>
         <thead>
@@ -12,14 +13,15 @@ const Table = ({ sat }) => {
         </tr>
         </thead>
         <tbody>
-        {sat.map((id, data) => 
-        <tr key = {id}>
+        {sat.map((data) => {
+        return (
+        <tr key = {data.id}>
           <td>{data.name}</td>
           <td>{data.type}</td>
           <td>{data.launchDate}</td>
           <td>{data.operational}</td>
         </tr>
-        )};
+        )})};
         </tbody>
       </table>
   );
