@@ -19,12 +19,25 @@ const Table = ({sat}) => {
           <td>{data.name}</td>
           <td>{data.type}</td>
           <td>{data.launchDate}</td>
-          <td>{data.operational}</td>
+          <td><Status /></td>
         </tr>
         )})};
         </tbody>
       </table>
   );
 };
+
+
+function Status(data){
+  let value = data.operational;
+  let activity;
+  if(value == true){
+    activity = "Active";
+  }
+  else {
+   activity = "Inactive";}
+   return activity;
+}
+
 
 export default Table;
